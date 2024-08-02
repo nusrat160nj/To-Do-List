@@ -1,7 +1,8 @@
+// src/LineItem.js
 import React from 'react';
 import { FaTrashAlt } from "react-icons/fa";
 
-const LineItem = ({ item, handleCheck, handleDelete }) => {
+const LineItem = ({item, handleCheck, handleDelete}) => {
   return (
     <li className='item' key={item.id}>
       <input
@@ -18,7 +19,6 @@ const LineItem = ({ item, handleCheck, handleDelete }) => {
       <FaTrashAlt
         role="button"
         onClick={() => handleDelete(item.id)}
-        aria-label={'Delete ${item.item}'}
         tabIndex="0"
       />
     </li>
