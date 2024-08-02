@@ -1,13 +1,203 @@
-body {
+/* General Reset */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Base Styling */
+html {
+  font-size: 18px; /* Slightly smaller for better scaling */
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f4f9; /* Soft background color */
+  color: #333; /* Darker text for better contrast */
+}
+
+/* App Container */
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #007BFF; /* Slightly lighter blue border */
+  background-color: #fff; /* White background for contrast */
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+/* Header */
+header {
+  width: 100%;
+  padding: 0.5em 1em;
+  background-color: #007BFF;
+  color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25rem; /* Slightly larger font size */
+  font-weight: bold;
+  border-bottom: 2px solid #0056b3; /* Darker bottom border */
+}
+
+/* Main Content Area */
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: auto;
+  padding: 1em; /* Added padding */
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  padding: 0.5em;
+  background-color: #007BFF;
+  color: aliceblue;
+  display: grid;
+  place-content: center;
+  font-size: 1rem; /* Slightly larger font size */
+  border-top: 2px solid #0056b3; /* Darker top border */
+}
+
+/* List Styles */
+ul {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+
+ul li::before {
+  content: "\200B";
+}
+
+/* List Item Styles */
+.item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.75rem 1rem; /* Increased padding */
+  margin: 0.5rem 0;
+  background-color: #fafafa; /* Light background color */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.item:hover {
+  background-color: #f0f0f0; /* Slightly darker on hover */
+}
+
+.item input[type="checkbox"] {
+  text-align: center;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  margin-right: 1rem; /* Increased margin */
+}
+
+.item input[type="checkbox"]:focus + label {
+  text-decoration: underline;
+}
+
+.item > label {
+  font-size: 1rem; /* Increased font size */
+  flex-grow: 1;
+  cursor: pointer; /* Pointer cursor */
+}
+
+.item svg {
+  width: 24px; /* Reduced size for better balance */
+  height: 24px;
+  font-size: 1.5rem; /* Adjusted font size */
+  color: steelblue;
+  cursor: pointer;
+  transition: color 0.3s; /* Smooth transition */
+}
+
+.item svg:focus,
+.item svg:hover {
+  color: red;
+  outline: none;
+}
+
+.addForm {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.5rem 0 0;
+  padding: 0 0.5rem 0.25rem;
+  border-bottom: 1px solid #eee;
+}
+
+.addForm label {
+  position: absolute;
+  left: -99999px;
+}
+
+.addForm input[type='text'] {
+  flex-grow: 1;
+  max-width: calc(100% - 50px);
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  margin-right: 0.25rem;
+  outline: none;
+}
+
+button {
+  height: 48px;
+  min-width: 48px;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: aliceblue;
+  color: mediumblue;
+  cursor: pointer;
+}
+
+button:focus, 
+button:hover {
+  color: white;
+  background-color: limegreen;
+  outline: none;
+}
+
+.searchForm {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.25rem 0 0;
+  padding: 0 0.5rem 0.25rem;
+  border-bottom: 1px solid #eee;
+}
+
+.searchForm label {
+  position: absolute;
+  left: -99999px;
+}
+
+.searchForm input[type='text'] {
+  flex-grow: 1;
+  max-width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  outline: none;
 }
